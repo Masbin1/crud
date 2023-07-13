@@ -25,3 +25,12 @@ Route::prefix('users')->group(function () {
     Route::post('/{user}', 'App\Http\Controllers\UsersController@update')->name('users.update');
     Route::delete('/{user}', 'App\Http\Controllers\UsersController@destroy')->name('users.destroy');
 });
+
+Route::prefix('iot')->group(function () {
+    Route::get('/', 'App\Http\Controllers\IotController@index')->name('iot.index');
+    Route::get('/create', 'App\Http\Controllers\IotController@create')->name('iot.create');
+    Route::post('/', 'App\Http\Controllers\IotController@store')->name('iot.store');
+    Route::get('/{user}/edit', 'App\Http\Controllers\IotController@edit')->name('iot.edit');
+    Route::post('/{user}', 'App\Http\Controllers\IotController@update')->name('iot.update');
+    Route::delete('/{user}', 'App\Http\Controllers\IotController@destroy')->name('iot.destroy');
+});
